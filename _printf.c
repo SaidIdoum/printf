@@ -34,6 +34,18 @@ int _printf(const char *format, ...)
 			case 'i':
 				printed_chars += _print_number(va_arg(args, int));
 				break;
+			case 'u':
+				printed_chars += _print_unsigned(va_arg(args, unsigned int));
+				break;
+			case 'o':
+				printed_chars += _print_octal(va_arg(args, unsigned int));
+				break;
+			case 'x':
+				printed_chars += _print_hex_lower(va_arg(args, unsigned int));
+				break;
+			case 'X':
+				printed_chars += _print_hex_upper(va_arg(args, unsigned int));
+				break;
 			case 'b':
 				printed_chars += _print_binary(va_arg(args, unsigned int));
 				break;
