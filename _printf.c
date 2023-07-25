@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			printed_chars += _print_char(*format);
+			printed_chars += _putchar(*format);
 		}
 		else
 		{
@@ -25,22 +25,24 @@ int _printf(const char *format, ...)
 			switch (*format)
 			{
 			case 'c':
-				printed_chars += _print_char(va_arg(args, int));
+				printed_chars += _putchar(va_arg(args, int));
 				break;
 			case 's':
 				printed_chars += _print_string(va_arg(args, char *));
 				break;
 			case '%':
-				printed_chars += _print_char('%');
+				printed_chars += _putchar('%');
 				break;
 			default:
-				printed_chars += _print_char('%');
-				printed_chars += _print_char(*format);
+				printed_chars += _putchar('%');
+				printed_chars += _putchar(*format);
 				break;
 			}
 		}
 		format++;
 	}
+
 	va_end(args);
+
 	return (printed_chars);
 }

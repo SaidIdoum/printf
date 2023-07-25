@@ -14,7 +14,7 @@ int _print_string(char *str)
 		str = "(null)";
 	while (*str)
 	{
-		_print_char(*str);
+		_putchar(*str);
 		str++;
 		printed_chars++;
 	}
