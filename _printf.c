@@ -30,6 +30,10 @@ int _printf(const char *format, ...)
 			case 's':
 				printed_chars += _print_string(va_arg(args, char *));
 				break;
+			case 'd':
+			case 'i':
+				printed_chars += _print_number(va_arg(args, int));
+				break;
 			case '%':
 				printed_chars += _putchar('%');
 				break;
@@ -43,6 +47,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(args);
-
 	return (printed_chars);
 }
