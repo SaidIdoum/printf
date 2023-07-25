@@ -34,6 +34,9 @@ int _printf(const char *format, ...)
 			case 'i':
 				printed_chars += _print_number(va_arg(args, int));
 				break;
+			case 'b':
+				printed_chars += _print_binary(va_arg(args, unsigned int));
+				break;
 			case '%':
 				printed_chars += _putchar('%');
 				break;
@@ -45,7 +48,6 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
-
 	va_end(args);
 	return (printed_chars);
 }
